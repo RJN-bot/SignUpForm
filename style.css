@@ -1,37 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  font-size: 16px;
+  --overlay-900: rgba(86, 72, 55, 0.5);
+  --primary-300: rgba(60, 200, 219, 0.759);
+  --primary-600: rgb(13, 61, 67);
+  --primary-100: rgb(212, 241, 246);
+  --primary-900: rgb(14, 45, 51);
+}
+
 body {
-  height: 100vh;
   font-family: "Ubuntu", sans-serif;
+  color: var(--primary-900);
+}
+
+a {
+  color: var(--primary-600);
+}
+
+h1 {
+  color: var(--primary-600);
+}
+
+p {
+  color: var(--primary-900);
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  height: 100vh;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
 .content {
   padding-left: 1rem;
+  width: calc(200vw / 3);
 }
 
 img {
   width: 100%;
   height: 100vh;
+  padding-bottom: 0;
+}
+
+.images {
+  width: calc(100vw / 3);
+  padding: 0;
 }
 
 .odin-overlay {
+  padding: 0;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 80px;
   height: 200px;
-  background: rgba(0, 85, 255, 0);
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  background-color: var(--overlay-900);
+  width: calc(100vw / 3);
   z-index: 100;
+  border-radius: 5px;
 }
+
+.odin-overlay-content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.odin-overlay-content p {
+  font-family: "Berkshire Swash", cursive;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: white;
+}
+
 .odin-icon {
-  width: 50px;
+  width: 120px;
   height: auto;
 }
 
@@ -48,23 +93,47 @@ img {
 
 .content {
   padding-inline: 1rem;
-}
-.images {
-  width: 100%;
+  padding-right: 2rem;
 }
 
-img {
-  width: 100%;
-  height: 100vh;
-}
-
-form {
+form:not(button) {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  column-gap: 5rem;
+  row-gap: 1rem;
+  margin-right: 4rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  border: 1px solid var(--primary-100);
+  border-radius: 5px;
 }
 
 .input-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+input {
+  border: 1px solid var(--primary-900);
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--primary-300);
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-block: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--primary-600);
+  font-weight: 900;
+  margin-bottom: 0.1rem;
+  width: 300px;
+  margin-left: 1rem;
+}
+
+
+input:focus {
+  background-color: var(--primary-100);
 }
